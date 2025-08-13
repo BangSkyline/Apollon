@@ -1,6 +1,6 @@
 # Services Dashboard - Cosmos Local
 
-Un dashboard élégant pour accéder à vos services locaux avec une interface inspirée du système solaire. **Version 2.0** avec affichage interactif des planètes !
+Un dashboard élégant pour accéder à vos services locaux avec une interface inspirée du système solaire, avec affichage interactif des planètes !
 
 ## 🚀 Fonctionnalités
 
@@ -9,7 +9,6 @@ Un dashboard élégant pour accéder à vos services locaux avec une interface i
 - **15 services locaux** supportés avec associations planétaires
 - **Animations fluides** et effets visuels immersifs
 - **Design responsive** adapté à tous les écrans
-- **Police Azonix** pour un style spatial unique
 - **Déploiement Docker** simple et rapide
 
 ## 🪐 Services et Associations Planétaires
@@ -18,17 +17,17 @@ Un dashboard élégant pour accéder à vos services locaux avec une interface i
 - **OpenLDAP** (Service d'annuaire) → **Mercure**
 - **Vault** (Gestionnaire de secrets) → **Vénus**
 - **Qdrant** (Base de données vectorielle) → **Terre**
-- **Jenkins** (CI/CD) → **Lune de la Terre**
+- **Jenkins** (CI/CD) → **Lune**
 - **GLPI** (Solution ITSM) → **Mars**
 - **Jupiter** (Service générique) → **Jupiter**
 - **PrestaShop** (E-commerce) → **Saturne**
 - **n8n** (Automatisation des workflows) → **Neptune**
 - **OpenWebUI** (Interface IA moderne) → **Uranus**
 - **Keycloak** (Gestion d'identité et SSO) → **Pluton**
-- **PrivacyIDEA** (Authentification 2FA) → **Lune Europe**
-- **Prometheus** (Monitoring et métriques) → **Lune Encelade**
-- **Grafana** (Visualisation de données) → **Lune Triton**
-- **NPM** (Gestionnaire de paquets) → **Lune Titan**
+- **PrivacyIDEA** (Authentification 2FA) → **Europe**
+- **Prometheus** (Monitoring et métriques) → **Encelade**
+- **Grafana** (Visualisation de données) → **Triton**
+- **NPM** (reverse-proxy) → **Titan**
 
 ## Installation et déploiement
 
@@ -61,8 +60,8 @@ L'application sera accessible sur `http://localhost:3000`
 docker-compose up -d
 
 # Ou construire l'image manuellement
-docker build -t services-dashboard .
-docker run -p 3000:3000 services-dashboard
+docker build -t apollon:V4 .
+docker run -p 89:89 services-dashboard
 ```
 
 ### Configuration
@@ -73,21 +72,6 @@ Les URLs des services sont configurées dans le fichier `public/index.html`. Mod
 // Exemple de modification d'URL
 onclick="openService('https://votre-service.cosmos')"
 ```
-
-## Structure du projet
-
-```
-services-dashboard/
-├── public/
-│   ├── index.html      # Interface principale
-│   └── style.css       # Styles CSS
-├── server.js           # Serveur Express
-├── package.json        # Configuration npm
-├── Dockerfile          # Configuration Docker
-├── docker-compose.yml  # Orchestration Docker
-└── README.md          # Documentation
-```
-
 ## Personnalisation
 
 ### Ajouter un nouveau service
