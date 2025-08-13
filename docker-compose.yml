@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  apollon:
+    image: apollon:V4
+    container_name: apollon
+    ports:
+      - "89:89"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      cosmos:
+        ipv4_address: 192.168.95.36
+
+networks:
+  cosmos:
+    external: true
+    name: cosmos

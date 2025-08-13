@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Azonix:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+
+.solar_system {
+  transform-style: preserve-3d;
+  pointer-events: none;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body .solar_system .service-planet, body input[type=radio][name=service]::after, body .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+body .solar_system .service-planet {
+  height: 1200px;
+  width: 1200px;
+  border-radius: 600px;
+  background: red;
+  transition: transform 2.8s 0.23s cubic-bezier(0.33, 0, 0, 1), opacity 2s 0.8s, box-shadow 0s 0s;
+  background-size: 1140px 910px !important;
+  top: auto;
+  bottom: -920px;
+  cursor: pointer;
+}
+
+@keyframes planet {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -1000px;
+  }
+}
+
+body .solar {
+  position: absolute;
+  transform: rotatex(-20deg);
+  perspective: 800px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+body input[type=radio][name=service]::after {
+  width: 220px;
+  height: 220px;
+  border-radius: 550px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 12;
+  left: 18px;
+  bottom: 282px;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+body .logo {
+  color: white;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 4px;
+  font-family: "Azonix", sans-serif;
+}
+
+body .logo span {
+  font-size: 12px;
+  color: #f39041;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+body label {
+  cursor: pointer;
+}
+
+/* Planet Display Area - Centered */
+.planet-display {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.planet-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#planet-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 
+    0 0 100px rgba(255, 255, 255, 0.1),
+    inset -30px -30px 80px rgba(0, 0, 0, 0.6);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: planetRotate 120s linear infinite;
+}
+
+@keyframes planetRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.planet-info {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+  max-width: 500px;
+  pointer-events: all;
+}
+
+.planet-info h2 {
+  font-size: 48px;
+  font-weight: 100;
+  margin: 0 0 5px 0;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: "Azonix", sans-serif;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.planet-info h3 {
+  font-size: 12px;
+  color: #f39041;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.planet-info p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 30px 0;
+  opacity: 0.7;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.planet-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #f39041;
+  color: #f39041;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.planet-link:hover {
+  background: #f39041;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.planet-link i {
+  margin-left: 8px;
+}
+
+/* Menu Styles - Centered Vertically */
+body label.menu {
+  color: white;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  left: 90px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+body label.menu:hover {
+  transform: translateX(10px);
+}
+
+body label.menu:after {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  border-radius: 60px;
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+
+body label.menu:hover h2, body label.menu:hover h3 {
+  opacity: 1;
+}
+
+/* Service Colors */
+body label.menu.huly h2 .pip { background: #ffd700; }
+body label.menu.openldap h2 .pip { background: #8c7853; }
+body label.menu.vault h2 .pip { background: #ffc649; }
+body label.menu.qdrant h2 .pip { background: #6b93d6; }
+body label.menu.jenkins h2 .pip { background: #c0c0c0; }
+body label.menu.glpi h2 .pip { background: #cd5c5c; }
+body label.menu.jupiter h2 .pip { background: #d2691e; }
+body label.menu.prestashop h2 .pip { background: #fad5a5; }
+body label.menu.n8n h2 .pip { background: #4169e1; }
+body label.menu.openwebui h2 .pip { background: #4fd0e7; }
+body label.menu.keycloak h2 .pip { background: #dda0dd; }
+body label.menu.privacyidea h2 .pip { background: #87ceeb; }
+body label.menu.prometheus h2 .pip { background: #f0f8ff; }
+body label.menu.grafana h2 .pip { background: #ff6347; }
+body label.menu.npm h2 .pip { background: #daa520; }
+
+body label.menu .preview {
+  width: 30px;
+  height: 30px;
+  background: yellow;
+  float: left;
+  background-size: cover !important;
+  position: absolute;
+  border-radius: 100px;
+  box-shadow: 0 -13px 10px 2px black inset;
+}
+
+/* Preview Images */
+body label.huly > .preview { background-image: url('images/huly.png'); }
+body label.openldap > .preview { background-image: url('images/openldap.png'); }
+body label.vault > .preview { background-image: url('images/vault.png'); }
+body label.qdrant > .preview { background-image: url('images/qdrant.png'); }
+body label.jenkins > .preview { background-image: url('images/jenkins.png'); }
+body label.glpi > .preview { background-image: url('images/glpi.png'); }
+body label.jupiter > .preview { background-image: url('images/jupiter.png'); }
+body label.prestashop > .preview { background-image: url('images/prestashop.png'); }
+body label.n8n > .preview { background-image: url('images/n8n.png'); }
+body label.openwebui > .preview { background-image: url('images/openwebui.png'); }
+body label.keycloak > .preview { background-image: url('images/keycloak.png'); }
+body label.privacyidea > .preview { background-image: url('images/privacyidea.png'); }
+body label.prometheus > .preview { background-image: url('images/prometheus.png'); }
+body label.grafana > .preview { background-image: url('images/grafana.png'); }
+body label.npm > .preview { background-image: url('images/npm.png'); }
+
+body label.menu .info {
+  position: relative;
+  left: 50px;
+  top: 1px;
+}
+
+body label.menu h2,
+body label.menu h3 {
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+body label.menu h2 {
+  font-size: 11px;
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+body label.menu h2 .pip {
+  width: 0;
+  height: 9px;
+  background: #fea082;
+  float: left;
+  position: relative;
+  top: 3px;
+  transition: all 0.3s;
+  margin-right: 0px;
+}
+
+body label.menu h3 {
+  font-size: 8px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  opacity: 0.3;
+}
+
+/* Menu positioning - Centered vertically */
+body label.menu:nth-of-type(1) { top: calc(50vh - 240px); }
+body label.menu:nth-of-type(2) { top: calc(50vh - 210px); }
+body label.menu:nth-of-type(3) { top: calc(50vh - 180px); }
+body label.menu:nth-of-type(4) { top: calc(50vh - 150px); }
+body label.menu:nth-of-type(5) { top: calc(50vh - 120px); }
+body label.menu:nth-of-type(6) { top: calc(50vh - 90px); }
+body label.menu:nth-of-type(7) { top: calc(50vh - 60px); }
+body label.menu:nth-of-type(8) { top: calc(50vh - 30px); }
+body label.menu:nth-of-type(9) { top: calc(50vh + 0px); }
+body label.menu:nth-of-type(10) { top: calc(50vh + 30px); }
+body label.menu:nth-of-type(11) { top: calc(50vh + 60px); }
+body label.menu:nth-of-type(12) { top: calc(50vh + 90px); }
+body label.menu:nth-of-type(13) { top: calc(50vh + 120px); }
+body label.menu:nth-of-type(14) { top: calc(50vh + 150px); }
+body label.menu:nth-of-type(15) { top: calc(50vh + 180px); }
+body label.menu:nth-of-type(16) { top: calc(50vh + 210px); }
+
+body .overlay {
+  border-bottom: 1020px solid black;
+  width: 1800px;
+  height: 620px;
+  top: auto;
+  -webkit-transform: none;
+  transform: none;
+  top: -240px;
+  left: -303px;
+  opacity: 1;
+  border-radius: 100%;
+  z-index: 0;
+  box-shadow: 0px -190px 215px 110px black inset;
+}
+
+body input[type=radio][name=service] {
+  appearance: none;
+  display: none;
+}
+
+/* Active service states */
+body input[type=radio][name=service]:checked + label {
+  opacity: 1;
+}
+
+body input[type=radio][name=service]:checked + label:before {
+  display: block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  z-index: 2;
+  background: white;
+  border-radius: 4px;
+  content: "";
+}
+
+body input[type=radio][name=service]:checked + label > .info h2 {
+  opacity: 1;
+}
+
+body input[type=radio][name=service]:checked + label > .info h2 .pip {
+  width: 30px;
+  margin-right: 6px;
+}
+
+body input[type=radio][name=service]:checked + label > .info h3 {
+  opacity: 1;
+  color: #fea082;
+}
+
+/* Orbital trajectories for visual effect */
+.orbital-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbital-ring:nth-child(1) {
+  width: 400px;
+  height: 400px;
+}
+
+.orbital-ring:nth-child(2) {
+  width: 500px;
+  height: 500px;
+}
+
+.orbital-ring:nth-child(3) {
+  width: 600px;
+  height: 600px;
+}
+
+.orbital-ring:nth-child(4) {
+  width: 700px;
+  height: 700px;
+}
+
+/* Moons orbiting around main planet */
+.moon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.moon.europa {
+  top: 30%;
+  right: 20%;
+  animation: orbitEuropa 15s linear infinite;
+}
+
+.moon.ganymede {
+  bottom: 30%;
+  left: 20%;
+  animation: orbitGanymede 20s linear infinite;
+}
+
+@keyframes orbitEuropa {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes orbitGanymede {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body .logo {
+    font-size: 12px;
+  }
+  
+  body label.menu {
+    left: 20px;
+  }
+  
+  .planet-display {
+    width: 90%;
+    height: 400px;
+  }
+  
+  #planet-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .planet-info {
+    max-width: 90%;
+  }
+  
+  .planet-info h2 {
+    font-size: 32px;
+  }
+  
+  .planet-info p {
+    font-size: 12px;
+  }
+  
+  /* Adjust menu positioning for mobile */
+  body label.menu:nth-of-type(1) { top: calc(50vh - 200px); }
+  body label.menu:nth-of-type(2) { top: calc(50vh - 175px); }
+  body label.menu:nth-of-type(3) { top: calc(50vh - 150px); }
+  body label.menu:nth-of-type(4) { top: calc(50vh - 125px); }
+  body label.menu:nth-of-type(5) { top: calc(50vh - 100px); }
+  body label.menu:nth-of-type(6) { top: calc(50vh - 75px); }
+  body label.menu:nth-of-type(7) { top: calc(50vh - 50px); }
+  body label.menu:nth-of-type(8) { top: calc(50vh - 25px); }
+  body label.menu:nth-of-type(9) { top: calc(50vh + 0px); }
+  body label.menu:nth-of-type(10) { top: calc(50vh + 25px); }
+  body label.menu:nth-of-type(11) { top: calc(50vh + 50px); }
+  body label.menu:nth-of-type(12) { top: calc(50vh + 75px); }
+  body label.menu:nth-of-type(13) { top: calc(50vh + 100px); }
+  body label.menu:nth-of-type(14) { top: calc(50vh + 125px); }
+  body label.menu:nth-of-type(15) { top: calc(50vh + 150px); }
+  body label.menu:nth-of-type(16) { top: calc(50vh + 175px); }
+}
+

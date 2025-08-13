@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Apollon Dash</title>
+</head>
+<body>
+  <h1 class='logo'>
+    Système Sol
+    <span>Apollon</span>
+  </h1>
+
+  <!-- Services Menu -->
+  <input class='service16' id='npm' type='radio' name='service'>
+  <label class='menu npm' for='npm' onclick="openService('https://npm.cosmos')" data-planet="npm">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        NPM
+      </h2>
+      <h3>Reverse-Proxy</h3>
+    </div>
+  </label>
+
+  <input class='service15' id='grafana' type='radio' name='service'>
+  <label class='menu grafana' for='grafana' onclick="openService('https://grafana.cosmos')" data-planet="grafana">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Grafana
+      </h2>
+      <h3>Monitoring</h3>
+    </div>
+  </label>
+
+  <input class='service14' id='prometheus' type='radio' name='service'>
+  <label class='menu prometheus' for='prometheus' onclick="openService('https://prometheus.cosmos')" data-planet="prometheus">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Prometheus
+      </h2>
+      <h3>Metrics</h3>
+    </div>
+  </label>
+
+  <input class='service13' id='privacyidea' type='radio' name='service'>
+  <label class='menu privacyidea' for='privacyidea' onclick="openService('https://privacyidea.cosmos')" data-planet="privacyidea">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        PrivacyIDEA
+      </h2>
+      <h3>2FA</h3>
+    </div>
+  </label>
+
+  <input class='service12' id='keycloak' type='radio' name='service'>
+  <label class='menu keycloak' for='keycloak' onclick="openService('https://keycloak.cosmos')" data-planet="keycloak">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Keycloak
+      </h2>
+      <h3>Identity</h3>
+    </div>
+  </label>
+
+  <input class='service11' id='openwebui' type='radio' name='service'>
+  <label class='menu openwebui' for='openwebui' onclick="openService('https://openwebui.cosmos')" data-planet="openwebui">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        OpenWebUI
+      </h2>
+      <h3>AI Interface</h3>
+    </div>
+  </label>
+
+  <input class='service10' id='n8n' type='radio' name='service'>
+  <label class='menu n8n' for='n8n' onclick="openService('https://n8n.cosmos')" data-planet="n8n">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        n8n
+      </h2>
+      <h3>Automation</h3>
+    </div>
+  </label>
+
+  <input class='service9' id='prestashop' type='radio' name='service'>
+  <label class='menu prestashop' for='prestashop' onclick="openService('https://prestashop.cosmos')" data-planet="prestashop">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        PrestaShop
+      </h2>
+      <h3>Boutique</h3>
+    </div>
+  </label>
+
+  <input class='service8' id='jupiter' type='radio' name='service'>
+  <label class='menu jupiter' for='jupiter' onclick="openService('https://jupiter.cosmos')" data-planet="jupiter">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Jupiter
+      </h2>
+      <h3>Site</h3>
+    </div>
+  </label>
+
+  <input class='service7' id='glpi' type='radio' name='service'>
+  <label class='menu glpi' for='glpi' onclick="openService('https://glpi.cosmos')" data-planet="glpi">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        GLPI
+      </h2>
+      <h3>Gestion</h3>
+    </div>
+  </label>
+
+  <input class='service6' id='jenkins' type='radio' name='service'>
+  <label class='menu jenkins' for='jenkins' onclick="openService('https://jenkins.cosmos')" data-planet="jenkins">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Jenkins
+      </h2>
+      <h3>CI/CD</h3>
+    </div>
+  </label>
+
+  <input class='service5' id='qdrant' type='radio' name='service'>
+  <label class='menu qdrant' for='qdrant' onclick="openService('https://qdrant.cosmos')" data-planet="qdrant">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Qdrant
+      </h2>
+      <h3>DB Vectorielle</h3>
+    </div>
+  </label>
+
+  <input class='service4' id='vault' type='radio' name='service'>
+  <label class='menu vault' for='vault' onclick="openService('https://vault.cosmos')" data-planet="vault">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Vault
+      </h2>
+      <h3>Secrets & CA</h3>
+    </div>
+  </label>
+
+  <input class='service3' id='openldap' type='radio' name='service'>
+  <label class='menu openldap' for='openldap' onclick="openService('https://ldap.cosmos')" data-planet="openldap">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        OpenLDAP
+      </h2>
+      <h3>Directory</h3>
+    </div>
+  </label>
+
+  <input class='service2' id='huly' type='radio' name='service' checked='checked'>
+  <label class='menu huly' for='huly' onclick="openService('https://huly.cosmos')" data-planet="huly">
+    <div class='preview'></div>
+    <div class='info'>
+      <h2>
+        <div class='pip'></div>
+        Huly
+      </h2>
+      <h3>Collaboration</h3>
+    </div>
+  </label>
+
+  <!-- Planet Display Area -->
+  <div class='planet-display'>
+    <div class='planet-container' id='planet-container'>
+      <img id='planet-image' src='images/huly.jpg' alt='Planet' />
+      <div class='planet-info' id='planet-info'>
+        <h2>Huly</h2>
+        <p>Plateforme de gestion de projets et de collaboration d'équipe moderne et intuitive.</p>
+        <a href="https://huly.cosmos" target="_blank" class="planet-link">
+          Accéder au service
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openService(url) {
+      window.open(url, '_blank');
+    }
+
+    // Configuration des planètes et services
+    const planetData = {
+      huly: {
+        image: 'images/huly.png',
+        name: 'Huly',
+        description: 'Plateforme de gestion de projets et de collaboration d\'équipe moderne et intuitive.',
+        url: 'https://huly.cosmos',
+        type: 'Hélios'
+      },
+      openldap: {
+        image: 'images/openldap.png',
+        name: 'OpenLDAP',
+        description: 'Service d\'annuaire LDAP pour la gestion centralisée des utilisateurs et de l\'authentification.',
+        url: 'https://ldap.cosmos',
+        type: 'Mercure'
+      },
+      vault: {
+        image: 'images/vault.png',
+        name: 'Vault',
+        description: 'Gestionnaire de secrets sécurisé pour stocker et accéder aux données sensibles.',
+        url: 'https://vault.cosmos',
+        type: 'Vénus'
+      },
+      qdrant: {
+        image: 'images/qdrant.png',
+        name: 'Qdrant',
+        description: 'Base de données vectorielle haute performance pour les applications d\'IA et de recherche sémantique.',
+        url: 'https://qdrant.cosmos',
+        type: 'Gaïa'
+      },
+      jenkins: {
+        image: 'images/jenkins.png',
+        name: 'Jenkins',
+        description: 'Plateforme d\'intégration et de déploiement continu (CI/CD) pour automatiser les pipelines.',
+        url: 'https://jenkins.cosmos',
+        type: 'Séléné'
+      },
+      glpi: {
+        image: 'images/glpi.png',
+        name: 'GLPI',
+        description: 'Solution ITSM complète pour la gestion des actifs IT, helpdesk et gestion des incidents.',
+        url: 'https://glpi.cosmos',
+        type: 'Mars'
+      },
+      jupiter: {
+        image: 'images/jupiter.png',
+        name: 'Jupiter',
+        description: 'Site Web de l\'entreprise.',
+        url: 'https://jupiter.cosmos',
+        type: 'Jupiter'
+      },
+      prestashop: {
+        image: 'images/prestashop.png',
+        name: 'PrestaShop',
+        description: 'Solution e-commerce complète pour créer et gérer votre boutique en ligne.',
+        url: 'https://prestashop.cosmos',
+        type: 'Saturne'
+      },
+      n8n: {
+        image: 'images/n8n.png',
+        name: 'n8n',
+        description: 'Plateforme d\'automatisation des workflows. Connectez vos applications et automatisez vos processus métier.',
+        url: 'https://n8n.cosmos',
+        type: 'Neptune'
+      },
+      openwebui: {
+        image: 'images/openwebui.png',
+        name: 'OpenWebUI',
+        description: 'Interface web moderne pour interagir avec des modèles d\'IA. Chatbot et assistant intelligent.',
+        url: 'https://openwebui.cosmos',
+        type: 'Uranus'
+      },
+      keycloak: {
+        image: 'images/keycloak.png',
+        name: 'Keycloak',
+        description: 'Solution de gestion d\'identité et d\'accès. Single Sign-On (SSO) et gestion des utilisateurs.',
+        url: 'https://keycloak.cosmos',
+        type: 'Pluton'
+      },
+      privacyidea: {
+        image: 'images/privacyidea.png',
+        name: 'PrivacyIDEA',
+        description: 'Système d\'authentification à deux facteurs (2FA) pour sécuriser l\'accès aux applications.',
+        url: 'https://privacyidea.cosmos',
+        type: 'Europe'
+      },
+      prometheus: {
+        image: 'images/prometheus.png',
+        name: 'Prometheus',
+        description: 'Système de monitoring et d\'alerting pour collecter et analyser les métriques de vos services.',
+        url: 'https://prometheus.cosmos',
+        type: 'Encelade'
+      },
+      grafana: {
+        image: 'images/grafana.png',
+        name: 'Grafana',
+        description: 'Plateforme de visualisation et d\'analyse de données avec des tableaux de bord interactifs.',
+        url: 'https://grafana.cosmos',
+        type: 'Triton'
+      },
+      npm: {
+        image: 'images/npm.png',
+        name: 'NPM',
+        description: 'Reverse-proxy.',
+        url: 'https://npm.cosmos',
+        type: 'Titan'
+      }
+    };
+
+    // Fonction pour changer la planète affichée
+    function changePlanet(planetKey) {
+      const planet = planetData[planetKey];
+      if (planet) {
+        const planetImage = document.getElementById('planet-image');
+        const planetInfo = document.getElementById('planet-info');
+        
+        planetImage.src = planet.image;
+        planetImage.alt = planet.name;
+        
+        planetInfo.innerHTML = `
+          <h2>${planet.name}</h2>
+          <h3>${planet.type}</h3>
+          <p>${planet.description}</p>
+          <a href="${planet.url}" target="_blank" class="planet-link">
+            Accéder au service
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        `;
+      }
+    }
+
+    // Ajouter les événements de survol
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuLabels = document.querySelectorAll('.menu');
+      
+      menuLabels.forEach(label => {
+        const planetKey = label.getAttribute('data-planet');
+        
+        label.addEventListener('mouseenter', function() {
+          changePlanet(planetKey);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
