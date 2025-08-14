@@ -1,4 +1,4 @@
-# Services Dashboard - Cosmos Local
+# Services Dashboard - Cosmos
 
 Un dashboard élégant pour accéder à vos services locaux avec une interface inspirée du système solaire, avec affichage interactif des planètes !
 
@@ -70,7 +70,7 @@ Les URLs des services sont configurées dans le fichier `public/index.html`. Mod
 
 ```javascript
 // Exemple de modification d'URL
-onclick="openService('https://votre-service.cosmos')"
+onclick="openService('https://votre-service.X')"
 ```
 ## Personnalisation
 
