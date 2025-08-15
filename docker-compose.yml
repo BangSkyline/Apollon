@@ -2,6 +2,9 @@ version: '3.8'
 
 services:
   apollon:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: apollon:V4
     container_name: apollon
     ports:
